@@ -24,7 +24,7 @@ public class CategoryController {
     public ResponseEntity<CategoryResponse> saveCategory(@RequestBody CategoryRequest category) {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(
-                        CategoryMapper.toCategoryResponse(categoryService.saveCategory(CategoryMapper.toCategory(category)))
+                        CategoryMapper.toCategoryResponse(categoryService.save(CategoryMapper.toCategory(category)))
                 );
     }
 
@@ -50,7 +50,7 @@ public class CategoryController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteByCategoryId(@PathVariable Long id) {
-        categoryService.deleteByCategoryId(id);
+        categoryService.delete(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 

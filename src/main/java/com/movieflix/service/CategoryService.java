@@ -16,7 +16,7 @@ public class CategoryService {
         this.categoryRepository = categoryRepository;
     }
 
-    public Category saveCategory(Category category) {
+    public Category save(Category category) {
         return categoryRepository.save(category);
     }
 
@@ -28,7 +28,7 @@ public class CategoryService {
         return categoryRepository.findById(id);
     }
 
-    public void deleteByCategoryId(Long id) {
+    public void delete(Long id) {
         categoryRepository.deleteById(id);
     }
 
