@@ -19,6 +19,6 @@ public class Category {
     private Long id;
 
     @Column(length = 100, nullable = false)
-    private String nome;
+    private String name;
 
 }
